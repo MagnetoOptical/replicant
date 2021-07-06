@@ -6,18 +6,21 @@ A template for a lightweight CD/CI server stack
 
 === What is This?
 This code sets up a CD/CI server stack which includes
-- Private IPFS
+
+- Private IPFS Cluster
 - Docker
 - Gogs
 - BuildBot
 - and more to come.
 
 The aim is to produce a distributed, lightweight dev server which will go on anything from an RPi3B+ to a powerful VM or Bare Metal.
+With this you could use a few RPi3B+ which you share with friends, and host your own code repo cloud with a URL reachable via IPFS for those with whom you have shared the IPFS URI.
 
 
 === Assumptions
 This repo and its requirements assume Debian as the host Linux distro.
 The playbook assumes you have:
+
 - a drive available over SCSI via ATA, USB, etc
 - and its size is at least 64 GiB, 
 - *and* it is the only drive available that is 32 GiB or larger
@@ -43,6 +46,7 @@ The playbook assumes you have:
 
 
 === RPi Recommendations
+
 - RPi 3B+ (or newer)
 - 16GB microSD for the OS
 - USB attached drive of at least 64GiB for Docker persistence which includes the IPFS store which holds configs and the git repo.
