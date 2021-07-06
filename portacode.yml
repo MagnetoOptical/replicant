@@ -45,6 +45,11 @@
         update_cache: yes
         force_apt_get: yes
 
+    # Docker goodies rely on the docker python module
+    - name: "Install the 'docker' python module"
+      pip:
+        name: docker
+
     - name: "Download go-ipfs"
       docker_container:
         name: "go-ipfs"
