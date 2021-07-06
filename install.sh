@@ -15,11 +15,11 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-GPGKEY_LIST = ("https://download.docker.com/linux/debian/gpg")
+GPGKEY_LIST=("https://download.docker.com/linux/debian/gpg")
 
-REPO_LIST = ("deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable")
+REPO_LIST=("deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable")
 
-APP_LIST = ("apt-transport-https" "ca-certificates" "curl" "gnupg2" "software-properties-common" "docker-ce" "ansible") 
+APP_LIST=("apt-transport-https" "ca-certificates" "curl" "gnupg2" "software-properties-common" "docker-ce" "ansible") 
 
 
 function install_keys {
