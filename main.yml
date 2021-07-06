@@ -68,23 +68,23 @@
     - name: "Install ansible-galaxy content"
       command: ansible-galaxy -r roles/requirements.yml -p roles/
 
-      # This is unintentially (mostly) specific to RPi's with USB drives
-      - name: "Create ext4 partition on extra drive"
-      community.general.parted:
-        device: /dev/sda
-        number: 1
-        align: optimal
-        label: gpt
-        state: present
-        name: Persistence
-        fs_type: ext4
+#      # This is unintentially (mostly) specific to RPi's with USB drives
+#      - name: "Create ext4 partition on extra drive"
+#      community.general.parted:
+#        device: /dev/sda
+#        number: 1
+#        align: optimal
+#        label: gpt
+#        state: present
+#        name: Persistence
+#        fs_type: ext4
 
-      - name: "Mount Persistence to /data"
-        ansible.posic.mount:
-          path: /dev/dis/by-name/Persistence
-          fstype: ext4
-          opts: defaults,noatime,nodiratime
-          state: present
+#      - name: "Mount Persistence to /data"
+#        ansible.posic.mount:
+#          path: /dev/dis/by-name/Persistence
+#          fstype: ext4
+#          opts: defaults,noatime,nodiratime
+#          state: present
 
 #    - name: "Find blank disks of at least 64 GiB"
 #      command: echo do somewhing with {{ item }}
