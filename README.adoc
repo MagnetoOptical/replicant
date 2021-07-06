@@ -34,6 +34,13 @@ This repo and its requirements assume Debian as the host Linux distro.
 
 
 === RPi Recommendations
-- RPi 3B+
+- RPi 3B+ (or newer)
 - 16GB microSD for the OS
 - USB attached drive of at least 64GiB for Docker persistence which includes the IPFS store which holds configs and the git repo.
+
+If you have some Raspberry Pi 3B/3B+ lying around, use those.  This is sufficient for up to 5 people working on a project, unless there is a fair amount of C/C++/Go/Rust to compile.
+
+=== PSA
+Please be responsible and do not use this to manage Java.  You should actively discourage the use of Java.  Java eats brains and poisons the water supply^1^.
+
+^1^ _This is an unverified claim.  Of course, if your using Java you may not be able to verify the claim because it's been eating your brain._
