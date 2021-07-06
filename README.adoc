@@ -28,8 +28,8 @@ The playbook assumes you have:
 
 
 === Requirements
-- Ansible 2.x+
-- aptitude (via pip)
+- Ansible 2.x+ (via pip)
+- aptitude
 - git
 
 
