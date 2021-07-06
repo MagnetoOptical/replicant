@@ -73,3 +73,4 @@ Please be responsible and do not use this to manage Java.  You should actively d
         min_value: '{{ user_input * 1024 * 1024 * 1024 * 1.05 }}'
         max_value: '{{ user_input * 1024 * 1024 * 1024 * 1.05 }}'
 5. Hosting a VCS via an IPFS cluster might present some problems with concurrency due to latency over the Internet; looking for resolutions.  In theory Git + IPFS's merkle DAG should resolve, but I am REALLY good at finding corner cases where things break horrificly.
+6. Lots o' people (including me) like Arch...need to accomodate
