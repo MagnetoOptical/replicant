@@ -65,6 +65,14 @@
           - /data/go-ipfs/export:/export
           - /data/go-ipfs/data:/data/ipfs
 
+      # This is unintentially (mostly) specific to RPi's with USB drives
+      - name: "Create ext4 partition on extra drive"
+      community.general.parted:
+        device: /dev/sda
+        number: 1
+        state: present
+        fs_type: ext4
+
 #    - name: "Find blank disks of at least 64 GiB"
 #      command: echo do somewhing with {{ item }}
 #      with_items: 
