@@ -1,6 +1,7 @@
 ---
   - hosts: localhost
     tasks:
+    # Need to break-out into distro-specific rolls: Debian/Ubuntu, Arch, etc
     - name: "Update Packages"
       become: yes
       apt:
@@ -46,6 +47,7 @@
         update_cache: yes
         force_apt_get: yes
 
+    #>>>  Begin universal platform, agnostic stuff <<<
     # Docker goodies rely on the docker python module
     - name: "Install the 'docker' python module"
       pip:
