@@ -1,0 +1,3 @@
+- src: community.general.parted
+- src: community.general.filesystem
+- src: ansible.posix.mount
