@@ -18,6 +18,7 @@
       vars:
         packagesdep:
         - apt-transport-https
+        - ca-certificates
         - curl
         - git
         - gnupg2
