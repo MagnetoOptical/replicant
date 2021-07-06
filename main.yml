@@ -53,7 +53,7 @@
       pip:
         name: docker
 
-    - name: "Download go-ipfs"
+    - name: "Download container: go-ipfs"
       docker_container:
         name: "go-ipfs"
         image: "ipfs/go-ipfs"
