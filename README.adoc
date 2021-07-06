@@ -59,7 +59,7 @@ Please be responsible and do not use this to manage Java.  You should actively d
 ^1^ _This is an unverified claim.  Of course, if your using Java you may not be able to verify the claim because it's been eating your brain._
 
 
-=== NOTE TO SELF
+=== NOTES and TODO's
 1. the parted module will partition disks, but only if you know what disk to partition: https://docs.ansible.com/ansible/latest/collections/community/general/parted_module.html
 2. the filesystem module will format a partition: https://docs.ansible.com/ansible/latest/collections/community/general/filesystem_module.html
 3. the mount module will mount the filesystem and can add to fstab: https://docs.ansible.com/ansible/latest/collections/community/general/filesystem_module.html
@@ -72,3 +72,4 @@ Please be responsible and do not use this to manage Java.  You should actively d
     vars:
         min_value: '{{ user_input * 1024 * 1024 * 1024 * 1.05 }}'
         max_value: '{{ user_input * 1024 * 1024 * 1024 * 1.05 }}'
+5. Hosting a VCS via an IPFS cluster might present some problems with concurrency due to latency over the Internet; looking for resolutions.  In theory Git + IPFS's merkle DAG should resolve, but I am REALLY good at finding corner cases where things break horrificly.
