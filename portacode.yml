@@ -32,6 +32,7 @@
         state: present
     
     - name: "Add Docker official repository"
+      become: yes
       apt_repository:
         repo: deb [arch=amd64] https://download.docker.com/linux/debian {{ ansible_distribution_release | lower}} stable
         state: present
