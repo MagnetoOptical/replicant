@@ -1,5 +1,9 @@
 ---
   - hosts: localhost
+    dependencies:
+      - src: community.general.parted
+      - src: community.general.filesystem
+      - src: ansible.posix.mount
     tasks:
     # Need to break-out into distro-specific rolls: Debian/Ubuntu, Arch, etc
     - name: "Update Packages"
