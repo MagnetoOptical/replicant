@@ -29,7 +29,7 @@ The playbook assumes you have:
 
 === Requirements
 - Ansible 2.x+
-- aptitude
+- aptitude (via pip)
 - git
 
 
@@ -38,15 +38,16 @@ The playbook assumes you have:
 2. Install Debian stable to it.
 3. Boot device.
 4. Set up a user to use sudo without a password
-5. run `sudo apt install -y ansible aptitude git`
-6. Setup the additional drive
+5. run `sudo apt install -y aptitude git python3-pip`
+6. Install ansible via pip with `python3 -m pip install ansible`
+7. Setup the additional drive
   a. Create a GPT partition
   b. Format with ext4
   c. Mount at /data
-7. Clone this repo
-8. cd into this repo's directory
-9. run `ansible-playbook portacode.yml`
-10. Begin using this "product"
+8. Clone this repo
+9. cd into this repo's directory
+10. run `ansible-playbook portacode.yml`
+11. Begin using this "product"
 
 
 === RPi Recommendations
