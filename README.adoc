@@ -66,7 +66,7 @@ Please be responsible and do not use this to manage Java.  You should actively d
 === NOTES and TODO's
 1. the parted module will partition disks, but only if you know what disk to partition: https://docs.ansible.com/ansible/latest/collections/community/general/parted_module.html
 2. the filesystem module will format a partition: https://docs.ansible.com/ansible/latest/collections/community/general/filesystem_module.html
-3. the mount module will mount the filesystem and can add to fstab: https://docs.ansible.com/ansible/latest/collections/community/general/filesystem_module.html
+3. the mount module will mount the filesystem and can add to fstab: https://docs.ansible.com/ansible/latest/collections/ansible/posix/mount_module.html
 4. This code may also be of some help
 
     - name: do something with a disks of a proper size
