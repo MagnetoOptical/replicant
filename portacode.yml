@@ -49,8 +49,9 @@
 
     - name: "Find blank disks of at least 64 GiB"
       command: echo do somewhing with {{ item }}
-      with_items:' {{ ansible_local.unused_disks }}'
-      when: min_value <= ansible_devices[item].sectors * ansible_devices[item].sectorsize <= max_value 
-      vars:
+      with_items: 
+        - {{ ansible_local.unused_disks }}
+        when: min_value <= ansible_devices[item].sectors * ansible_devices[item].sectorsize <= max_value 
+        vars:
           min_value: '{{ user_input * 1024 * 1024 * 1024 * 64 }}'
           max_value: '{{ user_input * 1024 * 1024 * 1024 * 8192 }}'
