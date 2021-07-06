@@ -1,11 +1,8 @@
 == PortaCode
 A template for a lightweight CD/CI server stack
 
-=== Requirements
-This repo and its requirements assume Debian as the host Linux distro.
 
-- Ansible 2.x+
-
+=== What is This?
 This code sets up a CD/CI server stack which includes
 - Private IPFS
 - Docker
@@ -14,6 +11,13 @@ This code sets up a CD/CI server stack which includes
 - and more to come.
 
 The aim is to produce a distributed, lightweight dev server which will go on anything from an RPi3B+ to a powerful VM or Bare Metal.
+
+
+=== Requirements
+This repo and its requirements assume Debian as the host Linux distro.
+
+- Ansible 2.x+
+
 
 === RPi Recommendations
 - RPi 3B+
