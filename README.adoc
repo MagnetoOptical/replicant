@@ -17,6 +17,20 @@ The aim is to produce a distributed, lightweight dev server which will go on any
 This repo and its requirements assume Debian as the host Linux distro.
 
 - Ansible 2.x+
+- aptitude
+- git
+
+
+=== Installation
+1. Have a VM or physical host (RPi?) to install to.
+2. Install Debian stable to it.
+3. Boot device.
+4. Set up a user to use sudo without a password
+5. run `sudo apt install -y ansible aptitude git`
+6. Clone this repo
+7. cd into this repo's directory
+8. run `ansible-playbook portacode.yml`
+9. Begin using this "product"
 
 
 === RPi Recommendations
