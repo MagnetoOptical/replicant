@@ -45,7 +45,7 @@
         force_apt_get: yes
 
     - name: "Download go-ipfs"
-      docker_contaienr:
+      docker_container:
         name: "go-ipfs"
         image: "ipfs/go-ipfs"
         exposed_ports:
@@ -55,7 +55,7 @@
         volumes:
           - /data/go-ipfs/export:/export
           - /data/go-ipfs/data:/data/ipfs
-          
+
 #    - name: "Find blank disks of at least 64 GiB"
 #      command: echo do somewhing with {{ item }}
 #      with_items: 
