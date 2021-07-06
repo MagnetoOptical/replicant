@@ -66,7 +66,7 @@
           - /data/go-ipfs/data:/data/ipfs
 
     - name: "Install ansible-galaxy content"
-      command: ansible-galaxy -r roles/requirements.yml -p roles/
+      command: ansible-galaxy install -r roles/requirements.yml -p roles/
 
 #      # This is unintentially (mostly) specific to RPi's with USB drives
 #      - name: "Create ext4 partition on extra drive"
