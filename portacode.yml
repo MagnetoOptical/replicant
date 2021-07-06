@@ -1,7 +1,4 @@
 ---
-  - assert:
-    that:
-    - "ansible_is_chroot" = false
   - hosts: localhost
     tasks:
     - name: "Update Packages"
