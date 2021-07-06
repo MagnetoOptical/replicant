@@ -70,7 +70,10 @@
       community.general.parted:
         device: /dev/sda
         number: 1
+        align: optimal
+        label: gpt
         state: present
+        name: Persistence
         fs_type: ext4
 
 #    - name: "Find blank disks of at least 64 GiB"
