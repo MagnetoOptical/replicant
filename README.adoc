@@ -39,10 +39,14 @@ The playbook assumes you have:
 3. Boot device.
 4. Set up a user to use sudo without a password
 5. run `sudo apt install -y ansible aptitude git`
-6. Clone this repo
-7. cd into this repo's directory
-8. run `ansible-playbook portacode.yml`
-9. Begin using this "product"
+6. Setup the additional drive
+  a. Create a GPT partition
+  b. Format with ext4
+  c. Mount at /data
+7. Clone this repo
+8. cd into this repo's directory
+9. run `ansible-playbook portacode.yml`
+10. Begin using this "product"
 
 
 === RPi Recommendations
