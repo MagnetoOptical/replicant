@@ -22,6 +22,7 @@
         - curl
         - git
         - gnupg2
+        - python3-pip
         - software-properties-common
         - wget
 
