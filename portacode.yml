@@ -44,12 +44,34 @@
         update_cache: yes
         force_apt_get: yes
 
-    - name: "Find blank disks of at least 64 GiB"
-      command: echo do somewhing with {{ item }}
-      with_items: 
-        - "{{ ansible_local.unused_disks }}"
-      when:
-        - min_value <= ansible_devices[item].sectors * ansible_devices[item].sectorsize <= max_value 
-      vars:
-        min_value: '{{ user_input * 1024 * 1024 * 1024 * 64 }}'
-        max_value: '{{ user_input * 1024 * 1024 * 1024 * 8192 }}'
+    - name: "Download go-ipfs"
+      docker_contaienr:
+        name: "go-ipfs"
+        image: "ipfs/go-ipfs"
+        exposed_ports:
+          - 4001:4001
+          - 127.0.0.1:8080:8080
+          - 172.0.0.1:5001:5001
+        volumes:
+          - /data/go-ipfs/export:/export
+          - /data/go-ipfs/data:/data/ipfs
+
+    - name: "Download ipfs-cluster"
+      docker_contaienr:
+        name: "ipfs-cluster"
+        image: "ipfs/ipfs-cluster:latest"
+        volumes:
+          - /data/ipfs-cluster/export:/export
+
+      
+
+
+#    - name: "Find blank disks of at least 64 GiB"
+#      command: echo do somewhing with {{ item }}
+#      with_items: 
+#        - "{{ ansible_local.unused_disks }}"
+#      when:
+#        - min_value <= ansible_devices[item].sectors * ansible_devices[item].sectorsize <= max_value 
+#      vars:
+#        min_value: '{{ user_input * 1024 * 1024 * 1024 * 64 }}'
+#        max_value: '{{ user_input * 1024 * 1024 * 1024 * 8192 }}'
