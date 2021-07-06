@@ -13,9 +13,16 @@ This code sets up a CD/CI server stack which includes
 The aim is to produce a distributed, lightweight dev server which will go on anything from an RPi3B+ to a powerful VM or Bare Metal.
 
 
-=== Requirements
+=== Assumptions
 This repo and its requirements assume Debian as the host Linux distro.
+The playbook assumes you have:
+- a drive available over SCSI via ATA, USB, etc
+- and its size is at least 32 GiB, 
+- *and* it is the only drive available that is 32 GiB or larger
+- *and* it does not currently have any partitions or filesystems on it.
 
+
+=== Requirements
 - Ansible 2.x+
 - aptitude
 - git
