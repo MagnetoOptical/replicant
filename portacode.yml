@@ -55,17 +55,7 @@
         volumes:
           - /data/go-ipfs/export:/export
           - /data/go-ipfs/data:/data/ipfs
-
-    - name: "Download ipfs-cluster"
-      docker_contaienr:
-        name: "ipfs-cluster"
-        image: "ipfs/ipfs-cluster:latest"
-        volumes:
-          - /data/ipfs-cluster/export:/export
-
-      
-
-
+          
 #    - name: "Find blank disks of at least 64 GiB"
 #      command: echo do somewhing with {{ item }}
 #      with_items: 
