@@ -1,0 +1,44 @@
+---
+  - hosts: localhost
+    tasks:
+    - name: "Update Packages"
+      become: yes
+      apt:
+        name: "*"
+        state: latest
+        update_cache: yes
+    
+    - name: "Install pre-requisite packages for docker install"
+      become: yes
+      apt:
+        name: "{{ packagesdep }}"
+        force_apt_get: yes
+        state: latest
+        update_cache: yes
+      vars:
+        packagesdep:
+        - apt-transport-https
+        - curl
+        - git
+        - gnupg2
+        - software-properties-common
+        - wget
+
+    - name: "Add apt signing key for docker-ce"
+      become: yes
+      apt_key:
+        url: https://download.docker.com/linux/debian/gpg
+        state: present
+    
+    - name: "Add Docker official repository"
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/debian {{ ansible_distribution_release | lower}} stable
+        state: present
+
+    - name: "Install Docker-CE"
+      become: yes
+      apt:
+        name: "docker-ce"
+        state: latest
+        update_cache: yes
+        force_apt_get: yes
