@@ -7,7 +7,7 @@ A template for a lightweight CD/CI server stack
 === What is This?
 This code sets up a CD/CI server stack which includes
 
-- Private IPFS Cluster
+- [linethrough]#Private IPFS Cluster# A distributed filesystem, to be determined.
 - Docker
 - Gogs
 - BuildBot
