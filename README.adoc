@@ -18,17 +18,12 @@ With this you could use a few RPi3B+ which you share with friends, and host your
 
 
 == Why make this?
-You reasons to use this are your own.  As for me: I have a strong disdain and distrust for centralized systems, espeically those supported by a profit motive.
+You reasons to use this are your own.  As for me: I have a strong disdain and distrust for centralized systems, espeically those supported by a profit motive.  The owner of GitHub in particular has a tendency to Embrace, Enhance, and Extenguish.  In this case, they are using your code hosted here (license permitting) to train AI to write code.  This behavior is, in general, a bad idea.
 
 
 === Assumptions
 This repo and its requirements assume Debian (stable or testing) as the host Linux distro.
-The playbook assumes you have:
-
-- a drive available over SCSI via SATA, USB, etc
-- and its size is at least 64 GiB, 
-- *and* it is the only drive available that is 32 GiB or larger
-- *and* it does not currently have any partitions or filesystems on it.
+This project assumes you have an additional drive formatted with Ext4 and mounted to /data.
 
 
 === Requirements
@@ -39,14 +34,14 @@ The playbook assumes you have:
 
 === Installation
 1. Have a VM or physical host (RPi?) to install to.
-2. Install Debian stable to it.  A preseed ISO could be a good idea.
+2. Install Debian stable/testing to it.  A preseed ISO could be a good idea.
 3. Boot your device.
-4. Set up a user to use sudo without a password
+4. Set up a user to use sudo without a password; prohibit SSH login without key.
 5. run `sudo apt install -y aptitude git python3-pip`
 6. Install ansible via pip with `python3 -m pip install ansible`
 7. Setup the additional drive
   a. Create a GPT partition
-  b. Format with ext4
+  b. Format with Ext4
   c. Mount at /data
 8. Clone this repo to your home folder or somewhere.
 9. cd into this repo's directory
