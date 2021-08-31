@@ -1,7 +1,7 @@
 :hide-uri-scheme:
 
 == PortaCode
-A template for a lightweight CD/CI server stack for a very small (< 5 people) group project.
+A template for a lightweight decentralized CD/CI server stack for a very small (< 5 people) group project.
 
 
 === What is This?
