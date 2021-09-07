@@ -7,10 +7,8 @@ A template for a lightweight decentralized CD/CI server stack for a very small (
 === What is This?
 This code sets up a CD/CI server stack which includes
 
-- Private IPFS instance (see https://github.com/cryptix/git-remote-ipfs.git)
-- Docker
-- Gogs (w/ SQLite3)
-- BuildBot
+- Decentralized, Distributed Storage (TBD)
+- Gogs (w/ SQLite3) & BuildBot via Docker
 - and more to come.
 
 The aim is to produce a distributed, lightweight dev server which will go on anything from an RPi3B+ to a powerful VM or Bare Metal.
