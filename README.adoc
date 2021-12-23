@@ -1,51 +1,105 @@
 :hide-uri-scheme:
 
 == PortaCode
-A template for a lightweight decentralized CD/CI server stack for a very small (< 5 people) group project.
+A template for a lightweight distributed CD/CI server stack.
 
 
 === What is This?
 This code sets up a CD/CI server stack which includes
 
-- Decentralized, Distributed Storage (TBD)
-- Gogs (w/ SQLite3) & BuildBot via Docker
-- and more to come.
+- Distributed Storage (TBD)
+- K3S w/ Podman
+- Pods!
+  * OpenLDAP (metamask auth in progress)
+  * go-ipfs
+  * PostgreSQL
+  * Lighttpd
+  * Kallithea
+  * Kanboard
+  * Trac
+  * A pipeline (TBD)
 
 The aim is to produce a distributed, lightweight dev server which will go on anything from an RPi3B+ to a powerful VM or Bare Metal.
-With this you could use a few RPi3B+ which you share with friends, and host your own code repo cloud with a URL reachable via IPFS for those with whom you have shared the IPFS URI.  If you plan to use this with more than a few people, you'll need both an RPi 4 (or better) with 8GB of RAM, and PostgreSQL.  MariaDB is an option as well, but I've seen several issues with Galera over WAN links; PostgreSQL is slightly better.  Accepting suggestions for a better RDBMS for this use case.
-
+With this you could use a few RPi3B+ which you share with friends, and host your own code repo cloud with a URL reachable via IPFS for those with whom you have shared the IPFS URI.  Cluster capability increases linearly with the number of nodes, however each node is realisitically limited to about 5 people.
 
 == Why make this?
-You reasons to use this are your own.  As for me: I have a strong disdain and distrust for centralized systems, espeically those supported by a profit motive.  The owner of GitHub in particular has a tendency to Embrace, Enhance, and Extenguish.  In this case, they are using your code hosted here (license permitting) to train AI to write code.  This behavior is, in general, a bad idea.
+Your reasons to use this are your own.  As for me: I have a strong disdain and distrust for centralized systems, espeically those supported by a profit motive.  The owner of GitHub in particular has a tendency to Embrace, Enhance, and Extinguish.  In this case, they are using your code hosted here (license permitting) to train AI to write code.  This behavior is, in general, a bad idea.
+
+=== A Brief Tangent on the Qualifications for Training Synthetic Intelligence
+This is particularly poinagnt with General Purpose Artificial Intelligence, but the fact remains that anything that learns behaviors (or any stimulus response pattern) is biased by the teacher with inumerable nuanced influences from the environment.  This means that if you are not a completely enlightened individual...one without pain tied to your past, nor fear of the future, and able to remain present without tuning out in the present, then you are NOT qualified to train an AI (esp. GPAI).  Your biases (fear, hurts, expectations, desires) will color the data samples and your interpretatoin of results.  Combine this with the imprecision of spoken (and most written) langages, and a formula for discord and potentially cataclysmic disaster has been applied.  The effects of this are far reaching, touching every person who knows of someone who knows of someone who reasearches (GP)AI.  
 
 
 === Assumptions
-This repo and its requirements assume Debian (stable or testing) as the host Linux distro.
-This project assumes you have an additional drive formatted with Ext4 and mounted to /data.
+This repo and its requirements assume Ubuntu 21.10+ as the host Linux distro.
+This project assumes you have an additional drive to use for the various data types hosted by this device.
 
 
-=== Requirements
-- Ansible 2.x+ (via pip)
-- aptitude
-- git
+=== Source Control Management
+Mercurial (Python; GPL 2+)
 
 
-=== Installation
-1. Have a VM or physical host (RPi?) to install to.
-2. Install Debian stable/testing to it.  A preseed ISO could be a good idea.
-3. Boot your device.
-4. Set up a user to use sudo without a password; prohibit SSH login without key.
-5. run `sudo apt install -y aptitude git python3-pip`
-6. Install ansible via pip with `python3 -m pip install ansible`
-7. Setup the additional drive
-  a. Create a GPT partition
-  b. Format with Ext4
-  c. Mount at /data
-8. Clone this repo to your home folder or somewhere.
-9. cd into this repo's directory
-10. run `ansible-playbook portacode.yml`
+Kallithea (Python, GPL 3)
 
-On an RPi3B+ this takes about 15 minutes to set up.
+*Requirements*
+
+- Base server should have podman in it's repositories and run on a Raspberry Pi
+- Reliable high volume write capable storage of >= 256GiB, named "REPLICANT2'
+- `sudo` group must be passwordless
+
+NOTE: Storage will be carved as:
+Single GPT partition (if you skip this, you may be sorry later), carve with lvm2
+
+ * 2 GiB            /vg_data/lv_templates   <-- docker/helm templates
+ * 10 GiB           /vg_data/lv_backup      <-- config backup via borg
+ * 20% remaining    /vg_data/local          <-- local pipeline space, pod configs
+ * 80% remaining    /vg_data/shared         <-- data to be shared (public repos, etc)
+
+NOTE: Run `ansible-galaxy collection install community.general` to meet the requirements to run the install playbook.
+
+=== CI/CD Framework
+Buildbot (Python; GPL 2)
+
+
+=== Build Automation Tool
+BitBake (Python; GPL 2)
+
+
+=== Application Specific
+
+==== _Web Applications Server_
+Gunicorn (Python; MIT)
+Lighttpd (C; BSD 3-Clause)
+
+==== _RDBMS_
+PostgresQL (C, C++, Python, HTML, CMake; PostgreSQL License)
+
+==== _NoSQL Document DB_
+ArangoDB (C++, JavaScript; Apache 2.0)
+
+==== _Graph Datastore_
+ArangoDB (C++, JavaScript; Apache 2.0)
+
+==== _Key:Value Store_
+ArangoDB (C++, JavaScript; Apache 2.0)
+
+==== _Full Text Search Engine_
+ArangoDB (C++, JavaScript; Apache 2.0)
+
+
+=== Code Test Framework
+Tox (Python; MIT)
+
+
+=== Code Quality Suggestion
+Tox (Python; MIT)
+
+
+=== Middleware Automation
+Ansible (Python; GPL 2.0) 
+NOTE: Considering Saltstack as it may be more complete for this use case.
+
+=== Project Management 
+Trac (Python, HTML, JavaScript, CSS; 3-clause BSD)
 
 
 === RPi Recommendations
