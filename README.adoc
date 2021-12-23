@@ -19,15 +19,15 @@ This code sets up a CD/CI server stack which includes
   * Trac
   * A pipeline (TBD)
 
-The aim is to produce a distributed, lightweight dev server which will go on anything from an RPi3B+ to a powerful VM or Bare Metal.
-With this you could use a few RPi3B+ which you share with friends, and host your own code repo cloud with a URL reachable via IPFS for those with whom you have shared the IPFS URI.  Cluster capability increases linearly with the number of nodes, however each node is realisitically limited to about 5 people.
+The aim is to produce a distributed, lightweight dev server that will go on anything from an RPi3B+ to a powerful VM or Bare Metal.
+With this, you could use a few RPi3B+ which you share with friends, and host your code repo cloud with a URL reachable via IPFS for those with whom you have shared the IPFS URI.  Cluster capability increases linearly with the number of nodes, however, each node is realistically limited to about 5 people.
 
 == Why make this?
-Your reasons to use this are your own.  As for me: I have a strong disdain and distrust for centralized systems, espeically those supported by a profit motive.  The owner of GitHub in particular has a tendency to Embrace, Enhance, and Extinguish.  In this case, they are using your code hosted here (license permitting) to train AI to write code.  This behavior is, in general, a bad idea.
+Your reasons to use this are your own.  As for me: I have a strong disdain and distrust for centralized systems, especially those supported by a profit motive.  The owner of GitHub in particular tends to Embrace, Enhance, and Extinguish.  In this case, they are using your code hosted here (license permitting) to train AI to write code.  This behavior is, in general, a bad idea.
 
 === A Brief Tangent on the Qualifications for Training Synthetic Intelligence
-This is particularly poinagnt with General Purpose Artificial Intelligence, but the fact remains that anything that learns behaviors (or any stimulus response pattern) is biased by the teacher with inumerable nuanced influences from the environment.  This means that if you are not a completely enlightened individual...one without pain tied to your past, nor fear of the future, and able to remain present without tuning out in the present, then you are NOT qualified to train an AI (esp. GPAI).  Your biases (fear, hurts, expectations, desires) will color the data samples and your interpretatoin of results.  Combine this with the imprecision of spoken (and most written) langages, and a formula for discord and potentially cataclysmic disaster has been applied.  The effects of this are far reaching, touching every person who knows of someone who knows of someone who reasearches (GP)AI.  
-
+This is particularly poignant with General Purpose Artificial Intelligence, but the fact remains that anything that learns behaviors (or any stimulus-response pattern) is biased by the teacher with innumerable nuanced influences from the environment.  This means that if you are not a completely enlightened individual...one without pain tied to your past, nor fear of the future, and able to remain present without tuning out in the present, then you are NOT qualified to train an AI (esp. GPAI).  Your biases (fear, hurts, expectations, desires) will color the data samples and your interpretation of results.  Combine this with the imprecision of spoken (and most written) languages, and a formula for discord and potentially cataclysmic disaster has been applied.  The effects of this are far-reaching, touching every person who knows of someone who knows of someone who researches (GP)AI.  
+On "simpler" ML systems, the effects of these influences only become noticeable via emergence--that is when many such systems are operating in their disparate roles to accomplish a common goal.  That said, the importance of the point I'm making here should not be downplayed.  If AI work is your goal, please consider carefully and proceed with caution regardless of on innocuous you think your work is.
 
 === Assumptions
 This repo and its requirements assume Ubuntu 21.10+ as the host Linux distro.
@@ -42,7 +42,7 @@ Kallithea (Python, GPL 3)
 
 *Requirements*
 
-- Base server should have podman in it's repositories and run on a Raspberry Pi
+- Base server should have podman in its repositories and run on a Raspberry Pi
 - Reliable high volume write capable storage of >= 256GiB, named "REPLICANT2'
 - `sudo` group must be passwordless
 
@@ -108,7 +108,7 @@ Trac (Python, HTML, JavaScript, CSS; 3-clause BSD)
 - 16GB microSD for the OS
 - USB attached drive of at least 64GiB for Docker persistence which includes the IPFS store which holds configs and the git repo.
 
-If you have some Raspberry Pi 3B/3B+ lying around, use those.  This is sufficient for up to 5 people working on a project, unless there is a fair amount of C/C++/Go/Rust to compile.
+If you have some Raspberry Pi 3B/3B+ lying around, use those.  This is sufficient for up to 5 people working on a project unless there is a fair amount of C/C++/Go/Rust to compile.
 
 === PSA
 Please be responsible and do not use this to manage Java.  You should actively discourage the use of Java.  Java eats brains and poisons the water supply^1^.
@@ -117,6 +117,6 @@ Please be responsible and do not use this to manage Java.  You should actively d
 
 
 === NOTES and TODO's
-1. Hosting a VCS via an IPFS cluster might present some problems with concurrency due to latency over the Internet; looking for resolutions.  In theory Git + IPFS's Merkle DAG should resolve, but I am REALLY good at finding corner cases where things break horrificly.
+1. Hosting a VCS via an IPFS cluster might present some problems with concurrency due to latency over the Internet; looking for resolutions.  In theory Git + IPFS's Merkle DAG should resolve, but I am REALLY good at finding corner cases where things break horrifically.
 2. Arch is a popular distro.  Need to learn Ansible better so I can support Arch as well.
 
