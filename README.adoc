@@ -1,6 +1,6 @@
 :hide-uri-scheme:
 
-== PortaCode
+== replicant
 A template for a lightweight distributed CD/CI server stack.
 
 
