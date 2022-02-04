@@ -10,13 +10,12 @@ This code sets up a CD/CI server stack which includes
 - Distributed Storage (TBD)
 - K3S w/ Podman
 - Pods!
-  * OpenLDAP (metamask auth in progress)
+  * Raft DAG Auth
   * go-ipfs
-  * PostgreSQL
+  * MySQL
   * Lighttpd
   * Kallithea
   * Kanboard
-  * Trac
   * A pipeline (TBD)
 
 The aim is to produce a distributed, lightweight dev server that will go on anything from an RPi3B+ to a powerful VM or Bare Metal.
