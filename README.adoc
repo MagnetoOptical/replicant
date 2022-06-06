@@ -75,7 +75,7 @@ Gunicorn (Python; MIT)
 Lighttpd (C; BSD 3-Clause)
 
 ==== _RDBMS_
-PostgresQL (C, C++, Python, HTML, CMake; PostgreSQL License)
+MariaDB (C, C++, Perl, Bash; GPLv2, LGPLv2 (client libraries))
 
 ==== _NoSQL Document DB_
 ArangoDB (C++, JavaScript; Apache 2.0)
@@ -102,8 +102,8 @@ Tox (Python; MIT)
 Ansible (Python; GPL 2.0) 
 NOTE: Considering Saltstack as it may be more complete for this use case.
 
-=== Project Management 
-Trac (Python, HTML, JavaScript, CSS; 3-clause BSD)
+=== Bug Tracker 
+MantisBT (PHP; GPLv2)
 
 
 === RPi Recommendations
@@ -118,6 +118,8 @@ If you have some Raspberry Pi 3B/3B+ lying around, use those.  This is sufficien
 Please be responsible and do not use this to manage Java.  You should actively discourage the use of Java.  Java eats brains and poisons the water supply^1^.
 
 ^1^ _This is an unverified claim.  Of course, if you are using Java you may not be able to verify the claim because it has been eating your brain._
+
+No, seriously.  Actively discourage the use of Java.  It was designed for set-top boxes.  Adapting appliance code to run in the enterprise is like adapting Crocs for business wear.  There are several fundamental flaws in the JVM (that I am legally bound not to disclose) which make it inherently insecure such that a complete re-design and re-write is required to resolve.  Such a measure will break backward compatibility and so will likely never happen.
 
 
 === NOTES and TODO's
