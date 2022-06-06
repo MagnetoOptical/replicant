@@ -1,7 +1,7 @@
 :hide-uri-scheme:
 
 == replicant
-A template for a lightweight distributed CD/CI server stack.
+A template for a lightweight distributed CI/CD server stack.
 
 
 === What is This?
