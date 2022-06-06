@@ -7,22 +7,23 @@ A template for a lightweight distributed CI/CD server stack.
 === What is This?
 This code sets up a CD/CI server stack which includes
 
-- Distributed Storage (TBD)
-- K3S w/ Podman
+- Distributed Storage (WIP)
+- K3S w/ Docker CE (transition to podman is upcomming)
 - Pods!
-  * Raft DAG Auth
+  * Raft DAG Auth (WIP)
   * go-ipfs
   * MySQL
   * Lighttpd
   * Kallithea
   * Kanboard
-  * A pipeline (TBD)
+  * A pipeline (WIP)
+  * API Messaging Server (WIP)
 
-The aim is to produce a distributed, lightweight dev server that will go on anything from an RPi3B+ to a powerful VM or Bare Metal.
-With this, you could use a few RPi3B+ which you share with friends, and host your code repo cloud with a URL reachable via IPFS for those with whom you have shared the IPFS URI.  Cluster capability increases linearly with the number of nodes, however, each node is realistically limited to about 5 people.
+The aim is to produce a distributed, lightweight but complete software development pipeline server that will go on anything from an RPi3B+ to a powerful VM or Bare Metal.
+With this, you could use a few RPi3B+ which you share with friends, and host your code repo cloud with a URL reachable via IPFS for those with whom you have shared the IPFS URI.  Cluster capability increases linearly with the number of nodes, however, each node is realistically limited to about 5 people on an RPi 3B+.
 
 == Why make this?
-Your reasons to use this are your own.  As for me: I have a strong disdain and distrust for centralized systems, especially those supported by a profit motive.  The owner of GitHub in particular tends to Embrace, Enhance, and Extinguish.  In this case, they are using your code hosted here (license permitting) to train AI to write code.  This behavior is, in general, a bad idea.
+Your reasons to use this are your own.  As for me: I have a strong disdain and distrust for centralized systems, especially those supported by a profit motive.  The owner of GitHub in particular tends to Embrace, Enhance, and Extinguish.  In this case, they are using your code hosted here (license permitting) to train AI to write code.  This behavior is, in general, a bad idea--honestly, it's a bad idea at many levels.
 
 === A Brief Tangent on the Qualifications for Training Synthetic Intelligence
 
@@ -32,14 +33,17 @@ This is particularly poignant with General Purpose Artificial Intelligence, but 
 On "simpler" ML systems, the effects of these influences only become noticeable via emergence--that is when many such systems are operating in their disparate roles to accomplish a common goal.  That said, the importance of the point I'm making here should not be downplayed.  If AI work is your goal, please consider carefully and proceed with caution regardless of how innocuous or "good" you think your work is.
 
 
-
 === Assumptions
-This repo and its requirements assume Ubuntu 21.10+ as the host Linux distro.
-This project assumes you have an additional drive to use for the various data types hosted by this device.
+
+* Ubuntu 21.10+ as the host Linux distro.
+* an additional drive to use for the various data types hosted by this device.
 
 
 === Source Control Management
-Mercurial (Python; GPL 2+)
+
+NOTE: Git can be adapted so that it emulates distributed behavior.  That configuration is left up to you as I do not use Git unless I have a client requirement for it.
+
+Mercurial 6.x (Python; GPL 2+)
 
 
 Kallithea (Python, GPL 3)
