@@ -3,6 +3,8 @@
 == replicant
 A template for a lightweight distributed CI/CD server stack.
 
+NOTE: This code is no longer being updated on Github.  It is hosted on the proto-replicant network.  Message me or create an issue for more informaiton.
+
 
 === What is This?
 This code sets up a CD/CI server stack which includes
